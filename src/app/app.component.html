@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Offpeak Media</title>
+  <!-- <link rel="stylesheet" href="../assets/css/normalize.css">
+  <link rel="stylesheet" href="../assets/css/main.css"> -->
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+ <!-- ======== HEADER ======== -->
+ <header id="header">
+   <div class='containerhead'>
+    <div class="logo"><a href="#"> </a></div>
+    <nav class="navbar">
+      <ul class="nav__items">
+        <li class="nav__item" (click)="checkout(20)"><a href="#">Try Offpeak Media</a></li>
+        <li class="nav__item"><a href="#">About Us</a></li>
+        <!-- <li class="nav__item"><a href="#">see feature</a></li> -->
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ======== MAIN ======== -->
+<main>
+  <!-- SECTION 1 -->
+  <section id="home" class="container">
+    <div class="row">
+      <div class="col-md-4 col-xs-12">
+        <div *ngIf="isPaymentDone && isSuccess" style="color: white;">Thanks for the payment, you can download the app now.</div>
+        <!-- <Stream class="company_name title">Stream movies and shows offline.</Stream> -->
+        <div style="padding-bottom: 12px">Offpeak Media Cloud is the first ever cloud DVR for streaming videos. Record from Netflix, Disney+, Hulu, Amazon, HBO, The CW, Peacock, and more. </div>
+  
+        <button class="btn btn-success" (click)="checkout(20)">Get Started</button>
+      </div>
+      <div class="col-md-8 col-xs-12">
+        <img class="img_home" src="https://www.Playon.tv/sites/default/files/gfx-tv-handmaids-phone-ui-full.png" alt="">
+      </div>
+    </div>
+  </section>
+  <!-- section two -->
+
+  <section id="images" class="">
+  
+  <div class="col-md-12">
+      <div class="col-md-12"> 
+        <div style="text-align: center; padding: 24px;">
+          <h1 style="font-size: 2rem;">Schedule your movie to download when you want</h1>
+        </div>
+       <img src="../assets/img/img-1.png" alt="images" />
+      </div>
+  </div>
+</section>
+  <!-- SECTION 5 -->
+  <footer>
+    <div class="top__footer container">
+      <div class="footer__container following">
+        <h2 class="title footer__title">FOLLOW US</h2>
+        <div class="sub_footer_container social_media_links">
+          <i class="bx bxl-facebook-square"></i>
+          <i class="bx bxl-instagram"></i>
+          <i class="bx bxl-twitter"></i>
+        </div>
+      </div>
+
+      <div class="footer__container address">
+        <h2 class="title footer__title">ADDRESS</h2>
+        <div class="sub_footer_container address_credentials">
+          <h3 class="place">Australia</h3>
+          <h3 class="email">krishneel73@gmail.com</h3>
+        </div>
+      </div>
+
+      <div class="footer__container services_footer">
+        <h2 class="title footer__title">SERVICES</h2>
+        <div class="sub_footer_container services_lists">
+          <h3>Watch Movies</h3>
+          <h3>Download Movies</h3>
+          <h3>Scheduled Movies</h3>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="end__footer container">
+      <div class="copyright">
+        <span>copyright © 2021</span>
+      </div>
+      <span class="designer"><a href="" target="_blank"></a></span>
+    </div>
+  </footer>
+</main>
+
+
+
+  <script src="../assets/js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="../assets/js/plugins.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+
+</html>
