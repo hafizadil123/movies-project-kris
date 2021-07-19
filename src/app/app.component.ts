@@ -24,7 +24,7 @@ export class AppComponent {
       locale: 'auto',
       token: function (stripeToken: any) {
         console.log(stripeToken)
-        axios.post('http://localhost:5000/api/v1/users/charge', { stripeToken, amount: amount * 100 }).then((res: any) => {
+        axios.post('http://3.25.197.108/api/v1/users/charge', { stripeToken, amount: amount * 100 }).then((res: any) => {
           this.isPaymentDone = true;
           if(res.success === 1) {
             this.isSuccess = true;
