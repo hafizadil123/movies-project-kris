@@ -29,12 +29,23 @@
   <!-- SECTION 1 -->
   <section id="home" class="container">
     <div class="row">
-      <div class="col-md-4 col-xs-12">
-        <div *ngIf="isPaymentDone && isSuccess" style="color: white;">Thanks for the payment, you can download the app now.</div>
+      <div class="col-md-4 col-xs-12" *ngIf="!isPaymentDone">
+       
         <!-- <Stream class="company_name title">Stream movies and shows offline.</Stream> -->
         <div style="padding-bottom: 12px">Offpeak Media Cloud is the first ever cloud DVR for streaming videos. Record from Netflix, Disney+, Hulu, Amazon, HBO, The CW, Peacock, and more. </div>
   
         <button class="btn btn-success" (click)="checkout(20)">Get Started</button>
+      </div>
+      <div *ngIf="isPaymentDone" class="col-md-4 col-xs-12" style="color: white;">
+        <div style="padding-bottom: 12px">Offpeak Media Cloud is the first ever cloud DVR for streaming videos. Record from Netflix, Disney+, Hulu, Amazon, HBO, The CW, Peacock, and more. </div>
+        <button class="btn btn-success" style="margin: 16px;">
+          <a href="www.google.com" target="_blank" style="color: white;">Donwload for Mac</a>
+        </button>
+        
+        <button class="btn btn-success">
+          <a href="www.facebook.com" target="_blank" style="color: white;">Download for Windows</a>
+        </button>
+
       </div>
       <div class="col-md-8 col-xs-12">
         <img class="img_home" src="https://www.Playon.tv/sites/default/files/gfx-tv-handmaids-phone-ui-full.png" alt="">

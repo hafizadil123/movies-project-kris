@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import axios from 'axios';
+import { AuthenticationService } from './app.service';
+import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,7 +14,9 @@ export class AppComponent {
   checkoutUrl = 'https://checkout.stripe.com/checkout.js';
   isPaymentDone = false;
   isSuccess = false;
-  constructor() { }
+  constructor(public _service: AuthenticationService) {
+    
+  }
 
   ngOnInit() {
     this.stripePaymentGateway();
@@ -22,15 +26,21 @@ export class AppComponent {
     const strikeCheckout = (<any>window).StripeCheckout.configure({
       key: this.stripeKey,
       locale: 'auto',
-      token: function (stripeToken: any) {
+      token:  (stripeToken: any) => {
         console.log(stripeToken)
-        axios.post('https://dhhadac5f1t2b.cloudfront.net/api/v1/users/charge', { stripeToken, amount: amount * 100 }).then((res: any) => {
+        amount = amount * 100;
+      
+        this._service.charge(stripeToken, amount)
+      .pipe(first())
+      .subscribe((data: any) => {
           this.isPaymentDone = true;
-          if(res.success === 1) {
-            this.isSuccess = true;
-            }
-            this.isSuccess = false;
-        })
+          console.log(data);
+        },
+        (error: any) => {
+          console.log('error', error);
+          this.isPaymentDone = true;
+        }
+      );
         // alert('Stripe token generated!');
       }
     });
